@@ -1,0 +1,1 @@
+export const API_URL = "https://redemem123123.loca.lt";
