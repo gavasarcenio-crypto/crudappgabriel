@@ -23,7 +23,7 @@ export default StyleSheet.create({
     name:{
         fontSize:14
     },
-    email:{
+    banda:{
         fontSize:10
     },
     button:{

@@ -14,16 +14,29 @@ export default function HomeScreen({ navigation }) {
     useEffect(()=>{
         loadMusic();
     },[]);
+
+
     return(
-        <View style={styles.container}/>
-        <Text style={styles.title}>Pessoas</Text>
 
-        <Button 
-        title="Adicionar Musica"
-        onPress={()=> navigation.navigate("AddEdit")}
-        />
-    
+        <><View style={styles.container}
+         />
+         <Text style={styles.title}>Musicas</Text>
+         <Button
+            title="Adicionar Musica"
+            onPress={() => navigation.navigate("AddEdit")} />
+            <FlatList
+                data={music}
+                keyExtractor={(item) => item.id.toString()}
 
-        </View>
+                renderItem={({ item }) => (
+                    <CardPersonal
+                        title={item}
+                        navigation={navigation}
+                        refresh={loadMusic} 
+                        />
+
+                )}
+                 />
+                 </>
     );
 }
